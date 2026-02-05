@@ -1,12 +1,102 @@
 
-footer{
-    background-color: black;
-    color: white;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 
+#productos-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+}
 
-.SocialMediaLogo{
-    width: 50px;
-    height: 50px;
+
+article {
+    background-color: #ffffff;
+    border: 2px solid #333;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+article h2 {
+    order: -1; 
+    font-size: 1.8rem;
+    margin: 10px 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+article img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+
+article p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    min-height: 60px; 
+}
+
+
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.precio {
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+
+button {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+
+@media (max-width: 768px) {
+    #productos-container {
+        grid-template-columns: 1fr;
+    }
 }
