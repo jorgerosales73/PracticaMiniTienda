@@ -47,8 +47,8 @@ const productosJSON = `[
     "tallas": ["S", "M", "L", "XL"],
     "colores": ["blanco", "negro"],
     "imagenes": {
-      "blanco": "img/archivosEladioT-Shirt.png",
-      "negro": "img/archivosEladioT-Shirt_BLACK.png"
+      "blanco": "img/archivosEladioT-shirt.png",
+      "negro": "img/archivosEladioT-shirt_BLACK.png"
     },
     "tags": ["premium"]
   }
@@ -64,7 +64,7 @@ function createArticle(producto) {
   return article;
 }
 
-function createImage(producto, color) {
+function createImagen(producto, color) {
   const img = document.createElement("img");
   img.src = producto.imagenes[color];
   img.alt = producto.nombre + " - " + color;
@@ -77,13 +77,13 @@ function createTitle(producto) {
   return h2;
 }
 
-function createDescription(producto) {
+function createDescripcion(producto) {
   const p = document.createElement("p");
   p.textContent = producto.descripcion;
   return p;
 }
 
-function createSizeSelector(producto) {
+function createTalles(producto) {
   const select = document.createElement("select");
   select.name = "talla";
   
@@ -97,7 +97,7 @@ function createSizeSelector(producto) {
   return select;
 }
 
-function createColorSelector(producto) {
+function createColores(producto) {
   const select = document.createElement("select");
   select.name = "color";
   
@@ -132,11 +132,11 @@ function muestraProductos() {
     const article = createArticle(producto);
     
     appendElements(article, [
-      createImage(producto, producto.colores[0]),
+      createImagen(producto, producto.colores[0]),
       createTitle(producto),
-      createDescription(producto),
-      createSizeSelector(producto),
-      createColorSelector(producto),
+      createDescripcion(producto),
+      createTalles(producto),
+      createColores(producto),
       createButton(producto)
     ]);
     
